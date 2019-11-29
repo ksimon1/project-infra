@@ -1,6 +1,6 @@
 presubmits:
   kubevirt/common-templates:
-  - name: pull-rhel6
+  - name: pull-e2e-common-templates-rhel6
     annotations:
       fork-per-release: "true"
     always_run: false
@@ -18,9 +18,8 @@ presubmits:
       nodeSelector:
         type: bare-metal-external
       containers:
-      - image: gcr.io/k8s-testimages/bootstrap:v20190516-c6832d9
+      - image: quay.io/ksimon/common-templates-e2e-env:v0.1.0
         command:
-        - "/usr/local/bin/runner.sh"
         - "/bin/sh"
         - "-c"
         - "export TARGET=rhel6 && automation/test.sh"
@@ -30,7 +29,7 @@ presubmits:
         resources:
           requests:
             memory: "20Gi"
-  - name: pull-rhel7
+  - name: pull-e2e-common-templates-rhel7
     annotations:
       fork-per-release: "true"
     always_run: false
@@ -48,9 +47,8 @@ presubmits:
       nodeSelector:
         type: bare-metal-external
       containers:
-      - image: gcr.io/k8s-testimages/bootstrap:v20190516-c6832d9
+      - image: quay.io/ksimon/common-templates-e2e-env:v0.1.0
         command:
-        - "/usr/local/bin/runner.sh"
         - "/bin/sh"
         - "-c"
         - "export TARGET=rhel7 && automation/test.sh"
@@ -60,7 +58,7 @@ presubmits:
         resources:
           requests:
             memory: "29Gi"
-  - name: pull-rhel8
+  - name: pull-e2e-common-templates-rhel8
     annotations:
       fork-per-release: "true"
     always_run: false
@@ -78,9 +76,8 @@ presubmits:
       nodeSelector:
         type: bare-metal-external
       containers:
-      - image: gcr.io/k8s-testimages/bootstrap:v20190516-c6832d9
+      - image: quay.io/ksimon/common-templates-e2e-env:v0.1.0
         command:
-        - "/usr/local/bin/runner.sh"
         - "/bin/sh"
         - "-c"
         - "export TARGET=rhel8 && automation/test.sh"
@@ -90,7 +87,7 @@ presubmits:
         resources:
           requests:
             memory: "20Gi"
-  - name: pull-windows10
+  - name: pull-e2e-common-templates-windows10
     annotations:
       fork-per-release: "true"
     always_run: false
@@ -108,9 +105,8 @@ presubmits:
       nodeSelector:
         type: bare-metal-external
       containers:
-      - image: gcr.io/k8s-testimages/bootstrap:v20190516-c6832d9
+      - image: quay.io/ksimon/common-templates-e2e-env:v0.1.0
         command:
-        - "/usr/local/bin/runner.sh"
         - "/bin/sh"
         - "-c"
         - "export TARGET=windows10 && automation/test.sh"
@@ -120,7 +116,7 @@ presubmits:
         resources:
           requests:
             memory: "20Gi"
-  - name: pull-windows2012
+  - name: pull-e2e-common-templates-windows2012
     annotations:
       fork-per-release: "true"
     always_run: false
@@ -138,9 +134,8 @@ presubmits:
       nodeSelector:
         type: bare-metal-external
       containers:
-      - image: gcr.io/k8s-testimages/bootstrap:v20190516-c6832d9
+      - image: quay.io/ksimon/common-templates-e2e-env:v0.1.0
         command:
-        - "/usr/local/bin/runner.sh"
         - "/bin/sh"
         - "-c"
         - "export TARGET=windows2012 && automation/test.sh"
@@ -150,7 +145,7 @@ presubmits:
         resources:
           requests:
             memory: "20Gi"
-  - name: pull-windows2016
+  - name: pull-e2e-common-templates-windows2016
     annotations:
       fork-per-release: "true"
     always_run: false
@@ -168,9 +163,8 @@ presubmits:
       nodeSelector:
         type: bare-metal-external
       containers:
-      - image: gcr.io/k8s-testimages/bootstrap:v20190516-c6832d9
+      - image: quay.io/ksimon/common-templates-e2e-env:v0.1.0
         command:
-        - "/usr/local/bin/runner.sh"
         - "/bin/sh"
         - "-c"
         - "export TARGET=windows2016 && automation/test.sh"
